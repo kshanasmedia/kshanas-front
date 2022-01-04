@@ -1,0 +1,49 @@
+*{
+  margin: 0;
+}
+
+body {
+  color: #333;
+  background: rgb(238, 238, 238);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12px;
+  padding: 5px;
+}
+a {
+  color: rgb(35, 99, 218);
+  text-decoration: none;
+}
+
+a:hover{
+  color: rgb(223, 74, 28);
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+nav a {
+  padding: 5px;
+}
+nav .logo {
+  margin-right: auto;
+}
+
+.sidebar{
+  width: 100px;
+  margin-right: 5px;
+  padding: 5px;
+}
+
+footer {
+  display: block;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 60px;
+  color: #777;
+}
+
+.not__found{
+  text-align: center;
+}

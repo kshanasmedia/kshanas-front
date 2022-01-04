@@ -1,0 +1,10 @@
+.doc--container{
+    display: flex;
+}
+
+.doc--core{
+    border: 1px solid #aaa;
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    width: 100%;
+}

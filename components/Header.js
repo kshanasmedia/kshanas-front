@@ -8,13 +8,13 @@ export default function Header(){
                 <Link href="/docs">
                     <a>Docs</a>
                 </Link>
-                <Link href="/docs">
+                <Link href="/github">
                     <a>Github</a>
                 </Link>
                 <Link href="/signup">
                     <a>Sign up</a>
                 </Link>
-                <Link href="/login">
+                <Link href="/signin">
                     <a>Sign in</a>
                 </Link>
             </nav>

@@ -4,7 +4,7 @@
 
 body {
   color: #333;
-  background: rgb(238, 238, 238);
+  background: linear-gradient(to right, rgb(235, 231, 226), rgb(228, 236, 229));
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 12px;
   padding: 5px;
@@ -15,7 +15,7 @@ a {
 }
 
 a:hover{
-  color: rgb(223, 74, 28);
+  text-decoration: underline;
 }
 
 nav {

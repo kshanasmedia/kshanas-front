@@ -18,10 +18,14 @@
 
 .doc--core h1{
     border-bottom: 1px solid lightgray;
+    font-weight: 300;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .doc--core h2{
     margin-top: 10px;
+    font-weight: 400;
+    font-family: 'Times New Roman', Times, serif;
     border-bottom: 1px solid lightgray;
 }
 
@@ -30,7 +34,7 @@
 }
 
 .active{
-    background: #f1e6e3;
+    background: rgb(223, 218, 203);
 }
 
 .doc--head{

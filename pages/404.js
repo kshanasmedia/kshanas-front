@@ -7,13 +7,15 @@ export default function Error404(){
             <title>Kshanas | Not found</title>
             <meta content="Page does not exist!"/>
         </Head>
-        <main className="not__found">
+        <main>
+            <div className="not__found">
             <h1>
-                Oops...
+                Unfortunately...
             </h1>
             <p>
                 This page could not be found.
             </p>
+            </div>
         </main>
         </>
     )

@@ -77,7 +77,7 @@ export default function DocDisplay({data}){
                         <div>{__section.text.map((__text, __id)=>{
                             return(
                                 <span key={__id}>
-                                    {__text.data}{reference_jsx(__text.ref)}
+                                    <span dangerouslySetInnerHTML={{__html:__text.data}}></span>{reference_jsx(__text.ref)}
                                 </span>
                             )
                         })}</div>
@@ -89,7 +89,7 @@ export default function DocDisplay({data}){
                                     {__subsec.text.map((__text, __idd)=>{
                                         return(
                                             <span key={__idd}>
-                                                {__text.data}{reference_jsx(__text.ref)}
+                                                <span dangerouslySetInnerHTML={{__html:__text.data}}></span>{reference_jsx(__text.ref)}
                                             </span>
                                         )
                                     })}

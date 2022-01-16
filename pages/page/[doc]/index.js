@@ -7,7 +7,7 @@ export default function Doc(props){
 
     const {data} = props;
 
-    console.log(data);
+    // console.log(data);
 
     if(data){
     return(
@@ -24,7 +24,12 @@ export default function Doc(props){
 
 export async function getServerSideProps(context) {
 
-    const result = await fetch(`http://localhost:3000/api/${context.params.doc}`)
+    const site_prefix = 'localhost:3000';
+    if(process.env.SITE_PREFIX){
+        site_prefix = process.env.SITE_PREFIX;
+    }
+
+    const result = await fetch(`http://${site_prefix}/api/${context.params.doc}`)
                             .then(res=>res.json()).catch((err)=>{
                                 return {'data':null}
                             });

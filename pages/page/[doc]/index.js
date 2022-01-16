@@ -24,16 +24,17 @@ export default function Doc(props){
 
 export async function getServerSideProps(context) {
 
-    let site_prefix = 'localhost:3000';
+    let site_prefix = 'http://localhost:3000';
     if(process.env.SITE_PREFIX){
         site_prefix = process.env.SITE_PREFIX;
         // console.log(site_prefix)
     }
 
-    const result = await fetch(`https://${site_prefix}/api/${context.params.doc}`)
+    const result = await fetch(`${site_prefix}/api/${context.params.doc}`)
                             .then(res=>res.json()).catch((err)=>{
                                 return {'data':null}
                             });
+    console.log(result);
     
     if(result?.data){
         return {

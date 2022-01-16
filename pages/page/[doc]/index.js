@@ -30,7 +30,7 @@ export async function getServerSideProps(context) {
         // console.log(site_prefix)
     }
 
-    const result = await fetch(`http://${site_prefix}/api/${context.params.doc}`)
+    const result = await fetch(`https://${site_prefix}/api/${context.params.doc}`)
                             .then(res=>res.json()).catch((err)=>{
                                 return {'data':null}
                             });

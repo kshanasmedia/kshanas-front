@@ -26,6 +26,15 @@ export default function DocDisplay({data}){
         }
     }
 
+    const displayMedia = (ele)=>{
+        return(
+            <div className={styles['media']}>
+                <span dangerouslySetInnerHTML={{__html: ele?.img}}/>
+                <i>{ele?.desc}{reference_jsx(ele?.ref)}</i>
+            </div>
+        )
+    }
+
     return(
         <div className={styles['doc--container']}>
             <div className={styles['doc--core']}>
@@ -35,13 +44,27 @@ export default function DocDisplay({data}){
                 </div>
                 
                 <div className={styles['doc--intro']}>
-                    {data?.intro.map((__intro, __index)=>{
-                        return(
-                            <span key={__index}>
-                                {__intro.data}{reference_jsx(__intro.ref)}
-                            </span>
-                        )
-                    })}
+
+                    <div>
+                        {data?.intro.map((__intro, __index)=>{
+                            return(
+                                <span key={__index}>
+                                    <span dangerouslySetInnerHTML={{__html:__intro.data}}></span>{reference_jsx(__intro.ref)}
+                                </span>
+                            )
+                        })}
+                    </div>
+
+                    <div>
+                        {data?.media.map((__media, __index)=>{
+                            return (
+                                <span key={__index}>
+                                    {displayMedia(__media)}
+                                </span>
+                                )
+                            })}
+                    </div>
+
                 </div>
 
                 <div className={styles['doc--contents']}>
@@ -72,15 +95,19 @@ export default function DocDisplay({data}){
                 <>
                 {data?.sections.map((__section, __index)=>{
                     return(
+                    <>
+                    <h2>{__section.name}</h2>
                     <div id={"sec"+(__index+1).toString()} className={styles['doc--section']}>
-                        <h2>{__section.name}</h2>
-                        <div>{__section.text.map((__text, __id)=>{
-                            return(
-                                <span key={__id}>
-                                    <span dangerouslySetInnerHTML={{__html:__text.data}}></span>{reference_jsx(__text.ref)}
-                                </span>
-                            )
-                        })}</div>
+                        <div className={styles['doc--section--text']}>
+                        <div>
+                            {__section.text.map((__text, __id)=>{
+                                return(
+                                    <span key={__id}>
+                                        <span dangerouslySetInnerHTML={{__html:__text.data}}></span>{reference_jsx(__text.ref)}
+                                    </span>
+                                )
+                            })}
+                        </div>
                         <div>{__section.subsections.map((__subsec,__sindex)=>{
                             _num = (__index+1).toString()+"."+(__sindex+1).toString();
                             return(
@@ -96,7 +123,18 @@ export default function DocDisplay({data}){
                                 </div>
                             )
                         })}</div>
+                        </div>
+                        <div>
+                            {__section?.media.map((__media, __index)=>{
+                                return (
+                                    <span key={__index}>
+                                        {displayMedia(__media)}
+                                    </span>
+                                    )
+                                })}
+                        </div>
                     </div>
+                    </>
                     )
                 })}
                 </>

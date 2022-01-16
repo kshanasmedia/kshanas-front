@@ -14,7 +14,7 @@ export default function Header(){
                     <Link href="/docs">
                         <a>Docs</a>
                     </Link>
-                    <Link href="/github">
+                    <Link href="https://github.com/kshanasmedia">
                         <a>Github</a>
                     </Link>
                     <Link href="/signup">

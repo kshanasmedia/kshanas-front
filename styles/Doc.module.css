@@ -42,7 +42,31 @@
 }
 
 .doc--intro{
-    
+    display: flex;
+}
+
+.doc--section{
+    display: flex;
+}
+
+.doc--section--text{
+    display: flex;
+    flex-direction: column;
+}
+
+.media{
+    border: 1px solid lightgray;
+    height: max-content;
+    width: max-content;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.media img{
+    border-bottom: 1px solid lightgray;
 }
 
 .doc--contents{

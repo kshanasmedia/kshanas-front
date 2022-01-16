@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-export default function Error404(){
+export default function Error404({children}){
     return(
         <>
         <Head>
@@ -15,6 +15,7 @@ export default function Error404(){
             <p>
                 This page could not be found.
             </p>
+            {children}
             </div>
         </main>
         </>

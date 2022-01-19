@@ -11,19 +11,15 @@ export default function Header(){
             <nav style={{display:'flex', flexDirection:'column', justifyContent:'space-between'}}>
                 <div>
                     
-                    <Link href="/docs">
-                        <a>Docs</a>
-                    </Link>
                     <Link href="https://github.com/kshanasmedia">
                         <a>Github</a>
                     </Link>
-                    <Link href="/signup">
-                        <a>Sign up</a>
+                    <Link href="https://github.com/kshanasmedia/database/issues">
+                        <a>Raise Issue</a>
                     </Link>
-                    <Link href="/signin">
-                        <a>Sign in</a>
+                    <Link href="/docs">
+                        <a>Docs</a>
                     </Link>
-
                 </div>
                 <div>
                 </div>

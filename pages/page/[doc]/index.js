@@ -10,15 +10,17 @@ export default function Doc(props){
     // console.log(data);
 
     if(data){
-    return(
-        <div className={styles['doc--container']}>
-            <DocDisplay data={data}/>
-        </div>
-    )
+        return(
+            <div>
+                <DocDisplay data={data}/>
+            </div>
+        )
     }else{
-        return <Error404>
-            Want to create this page? Click <Link href="https://github.com/kshanasmedia/database"><a>here</a></Link> to contribute
-        </Error404>
+        return (
+            <Error404>
+                Want to create this page? Click <Link href="https://github.com/kshanasmedia/database"><a>here</a></Link> to contribute
+            </Error404>
+        )
     }
 }
 
@@ -30,9 +32,9 @@ export async function getServerSideProps(context) {
         // console.log(site_prefix)
     }
 
-    const result = await fetch(`${site_prefix}/api/${context.params.doc}`)
+    const result = await fetch(`${site_prefix}/api/doc/${context.params.doc}`)
                             .then(res=>res.json()).catch((err)=>{
-                                return {'data':null}
+                                return null;
                             });
     console.log(result);
     

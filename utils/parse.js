@@ -11,6 +11,7 @@ const mediaPattern = /\|/i
 const text_type = ["ref", "section", "subsection", "media"]
 
 function extractMediaDetails(raw_text){
+
     const elm = raw_text.split(mediaPattern);
 
     if(elm && elm.length){
@@ -38,17 +39,7 @@ function extractMediaDetails(raw_text){
     }
 }
 
-async function ParseFile(fileID){
-
-    const log = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}',{
-                owner: 'kshanasmedia',
-                repo: 'database',
-                path: `en/${fileID}.md`
-            });
-    
-    const file = decode(log?.data.content);
-
-
+function Parser(file){
     const arr = file.split(pattern);
 
 
@@ -135,4 +126,27 @@ async function ParseFile(fileID){
     return return_object;
 }
 
-module.exports = ParseFile;
+export async function ParseFile(fileID){
+    const log = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}/',{
+        owner: 'kshanasmedia',
+        repo: 'database',
+        path: `en/${fileID}.md`
+    });
+
+    const file = decode(log?.data.content);
+
+    return Parser(file)
+}
+
+export async function ParsePreviewFile(params){
+    // console.log(params);
+    const {owner, repo, branch, fileId} = params;
+    const path = `en/${fileId}.md`;
+    const branchRef = ((branch)?`?ref=${branch}`:'');
+    const log = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}${branchRef}`)
+                      .then(doc=>doc.json())
+    // console.log(log)
+    const file = decode(log?.content);
+
+    return Parser(file)
+}

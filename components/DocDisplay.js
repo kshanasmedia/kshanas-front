@@ -3,7 +3,9 @@ import { useRouter } from 'next/router';
 import Sidebar from './Sidebar';
 import styles from '../styles/Doc.module.css';
 
-export default function DocDisplay({data}){
+export default function DocDisplay(props){
+
+    const {data} = props;
 
     const {asPath} = useRouter();
     // console.log(asPath);

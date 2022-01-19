@@ -62,7 +62,7 @@ export default function Preview(props){
             <div className={styles["meta"]}>
                 {data && <span>
                     Click 
-                    <Link href={`https://github.com/${username}/${repo}/blob/${branch!=''? branch:'main'}/en/${filename}.md`}><a target={'_blank'} rel="noopener"> here </a></Link>
+                    <Link href={`https://github.com/${username}/${repo}/blob/${branch!=''? branch:'main'}/en/${filename}.md`}><a> here </a></Link>
                     to edit the document.
                     </span>
                 }

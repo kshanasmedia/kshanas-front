@@ -16,7 +16,7 @@ export default function Page(props){
                     {data?.map((_elm, _index)=>{
                         return(
                             <li key={_elm.fileId}>
-                                <Link href={`page/${_elm.fileId}`}><a>{_elm.name}</a></Link> [<span><a href={_elm.html_url} target={'_blank'}>Source File</a>]</span>
+                                <Link href={`page/${_elm.fileId}`}><a>{_elm.name}</a></Link> [<span><a href={_elm.html_url}>Source File</a>]</span>
                             </li>
                         )
                     })}

@@ -17,7 +17,7 @@ export default function Preview(props){
         event.preventDefault();
         let params = {fileId:filename, owner: username, repo: repo};
         if(branch && branch!='') params = {...params, branch: branch}
-        let site_prefix = 'http://localhost:3000';
+        let site_prefix = 'https://sardi-bahut-hai.netlify.app';
         if(process.env.SITE_PREFIX){
             site_prefix = process.env.SITE_PREFIX;
             // console.log(site_prefix)

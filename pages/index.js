@@ -25,6 +25,8 @@ export default function Home() {
                     </div>
                     <p className={styles.content}>
                     Page is Under construction! Click <Link href="/page/demo"><a>here</a></Link> for demo.
+                    <br/>
+                    Also try <Link href="/page"><a>/page</a></Link> and <Link href="/preview"><a>/preview</a></Link>
                     </p>
                 </div>
           </div>

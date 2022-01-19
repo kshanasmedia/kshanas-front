@@ -6,7 +6,7 @@ const octokit = new Octokit({auth: process.env.API_TOKEN});
 export default function Page(props){
     const {data} = props;
 
-    console.log(data);
+    // console.log(data);
 
     return(
         <div className={styles['container']}>

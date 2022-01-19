@@ -30,7 +30,7 @@ export default function Preview(props){
                                 .then(res=>res.json()).catch((err)=>{
                                     return null;
                                 });
-        console.log(result);
+        // console.log(result);
         if(result?.data) setData(result?.data);
         // console.log('here')
     }

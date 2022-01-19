@@ -6,7 +6,12 @@ export default function Header(){
     return(
         <header>
             <nav>
-                <Image  src={logo} height={49.5} width={72} />
+                <Link href="/">
+                    <a>
+                        <Image  src={logo} height={49.5} width={72} />
+                    </a>
+                </Link>
+                
             </nav>
             <nav style={{display:'flex', flexDirection:'column', justifyContent:'space-between'}}>
                 <div>

@@ -1,4 +1,3 @@
-require('dotenv').config();
 const {Octokit, App} = require('octokit');
 const {encode, decode} = require('js-base64');
 

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useState } from "react";
 import DocDisplay from "../../components/DocDisplay";
 import styles from '../../styles/Preview.module.css';
+import { base_url } from "../../utils/constants";
 
 
 export default function Preview(props){
@@ -17,13 +18,8 @@ export default function Preview(props){
         event.preventDefault();
         let params = {fileId:filename, owner: username, repo: repo};
         if(branch && branch!='') params = {...params, branch: branch}
-        let site_prefix = 'https://sardi-bahut-hai.netlify.app';
-        if(process.env.SITE_PREFIX){
-            site_prefix = process.env.SITE_PREFIX;
-            // console.log(site_prefix)
-        }
 
-        let url = new URL(`${site_prefix}/api/preview`);
+        let url = new URL(`${base_url}/api/preview`);
         url.search = new URLSearchParams(params).toString();
     
         const result = await fetch(url)

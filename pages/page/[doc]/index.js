@@ -1,6 +1,7 @@
 import Link from "next/link";
 import DocDisplay from "../../../components/DocDisplay";
 import styles from '../../../styles/Doc.module.css';
+import { base_url } from "../../../utils/constants";
 import Error404 from "../../404";
 
 export default function Doc(props){
@@ -26,17 +27,11 @@ export default function Doc(props){
 
 export async function getServerSideProps(context) {
 
-    let site_prefix = 'http://localhost:3000';
-    if(process.env.SITE_PREFIX){
-        site_prefix = process.env.SITE_PREFIX;
-        // console.log(site_prefix)
-    }
-
-    const result = await fetch(`${site_prefix}/api/doc/${context.params.doc}`)
+    const result = await fetch(`${base_url}/api/doc/${context.params.doc}`)
                             .then(res=>res.json()).catch((err)=>{
                                 return null;
                             });
-    console.log(result);
+    // console.log(result);
     
     if(result?.data){
         return {

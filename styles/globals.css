@@ -57,25 +57,6 @@ nav .logo {
   flex-direction: column;
 }
 
-form{
-  margin: 10px;
-  align-items: center;
-}
-
-form .field-group{
-  padding: 5px;
-  display: flex;
-  flex-direction: column;
-}
-
-form label{
-  margin-right: 10px;
-}
-
-form input{
-  width: 100%;
-}
-
 .body--container{
   display: flex;
 }
